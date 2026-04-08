@@ -1,41 +1,42 @@
-# Pocket_CLI
-“Pocket is a CLI tool that stores your personal or company context and automatically prepends relevant snippets to AI queries for personalized answers.”
+# Pocket — Personal Context Manager CLI
 
-# Installation
-git clone <https://github.com/Andy9899/Pocket_CLI>
+A CLI tool that stores personal context snippets and uses them to give personalized AI answers.
 
-cd Pocket_CLI
+## Setup
 
-pip install -r requirements.txt
+1. Clone or download the project
 
-export GROQ_API_KEY=your_key_here
+2. Install Python 3.x
+
+3. Create a `config.py` file in the project folder:
+
+   API_KEY = "your-groq-api-key"
+
+   Get a free key at: console.groq.com
 
 
-# Usage:
-python pocket.py <command> <value> [extra]
-Commands
-add — Add a snippet:
-python pocket.py add "My company uses React and TypeScript"
+4. Open a terminal and cd into the project folder:
+   cd Pocket_CLI
 
-list — List all snippets:
-python pocket.py list
 
-delete — Delete a snippet by ID:
-python pocket.py delete 1
+## Commands
 
-query — Query AI with relevant snippets:
-python pocket.py query "How should I structure my API calls?"
+# Add a context snippet
+py pocket.py add "We use React and TypeScript"
 
-permissions — Set snippet permissions (public/private):
-python pocket.py permissions 1 private
+# List all snippets
+py pocket.py list
 
-**IF PRIVATE THE AI WILL NOT BE ABLE TO ACCESS YOUR INFORMATION FOR THAT KEYID**
+# Delete a snippet by ID
+py pocket.py delete 0
 
-# Example Flow:
-python pocket.py add "Our API rate limit is 1000 req/min"
+# Set a snippet to public or private
+py pocket.py permissions 0 private
 
-python pocket.py add "Frontend uses TypeScript"
+# Query the AI using your context
+py pocket.py query "How should I structure my API calls?"
 
-python pocket.py query "How should I handle API errors?"
-
-**Returns AI response with relevant snippets automatically included**
+## Notes
+- Public snippets are sent to the AI as context
+- Private snippets are stored but never sent to the AI
+- config.py is not included — you must create it yourself with your own API key

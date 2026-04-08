@@ -10,9 +10,8 @@ pip install -r requirements.txt
 
 export GROQ_API_KEY=your_key_here
 
-Usage
 
-# Run the CLI:
+# Usage:
 python pocket.py <command> <value> [extra]
 Commands
 add — Add a snippet:

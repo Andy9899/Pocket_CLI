@@ -13,7 +13,7 @@ args = parser.parse_args()
 
 if args.command == "add":
     store.add(args.value)
-    print(f"✓ Snippet added")
+    print(f"[OK] Snippet added")
 
 elif args.command == "list":
     snippets = store.list_all()
@@ -27,7 +27,7 @@ elif args.command == "delete":
     store.delete(int(args.value))
     exists = any(ID.get("keyID") == args.value for ID in store.list_all())
     if exists:
-        print(f"❌ Snippet deleted")
+        print(f"[OK] Snippet deleted")
         pass
     else: print(f"Wrong ID or Snippet does not exist")
 
@@ -35,9 +35,12 @@ elif args.command == "delete":
 elif args.command == "query":
     public = [s for s in store.list_all() if s["permission"] == "public"]
     result = query(args.value, public)
-    print(result["choices"][0]["message"]["content"])
+    if result:
+        print(result["choices"][0]["message"]["content"])
+    else:
+        print("Query failed. Check your API key and network connection.")
 
 elif args.command == "permissions":
     store.set_permission(int(args.value), args.extra)
-    print(f"{args.value} permission set to {args.extra}")
+    print(f"[OK]{args.value} permission set to {args.extra}")
 

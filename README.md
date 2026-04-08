@@ -3,9 +3,13 @@
 
 # Installation
 git clone <https://github.com/Andy9899/Pocket_CLI>
+
 cd Pocket_CLI
+
 pip install -r requirements.txt
+
 export GROQ_API_KEY=your_key_here
+
 Usage
 
 # Run the CLI:

@@ -2,13 +2,13 @@
 “Pocket is a CLI tool that stores your personal or company context and automatically prepends relevant snippets to AI queries for personalized answers.”
 
 # Installation
-git clone <your-repo-url>
+git clone <https://github.com/Andy9899/Pocket_CLI>
 cd Pocket_CLI
 pip install -r requirements.txt
 export GROQ_API_KEY=your_key_here
 Usage
 
-#Run the CLI:
+# Run the CLI:
 python pocket.py <command> <value> [extra]
 Commands
 add — Add a snippet:
@@ -27,8 +27,8 @@ permissions — Set snippet permissions (public/private):
 python pocket.py permissions 1 private
 **IF PRIVATE THE AI WILL NOT BE ABLE TO ACCESS YOUR INFORMATION FOR THAT KEYID**
 
-Example Flow
+# Example Flow:
 python pocket.py add "Our API rate limit is 1000 req/min"
 python pocket.py add "Frontend uses TypeScript"
 python pocket.py query "How should I handle API errors?"
-# Returns AI response with relevant snippets automatically included
+**Returns AI response with relevant snippets automatically included**

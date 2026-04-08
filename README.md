@@ -25,10 +25,14 @@ python pocket.py query "How should I structure my API calls?"
 
 permissions — Set snippet permissions (public/private):
 python pocket.py permissions 1 private
+
 **IF PRIVATE THE AI WILL NOT BE ABLE TO ACCESS YOUR INFORMATION FOR THAT KEYID**
 
 # Example Flow:
 python pocket.py add "Our API rate limit is 1000 req/min"
+
 python pocket.py add "Frontend uses TypeScript"
+
 python pocket.py query "How should I handle API errors?"
+
 **Returns AI response with relevant snippets automatically included**
